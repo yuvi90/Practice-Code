@@ -4,7 +4,7 @@ export const dummyData = {
             id: 1,
             title: "Web Development",
             image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi at quae et aperiam ipsa culpa a sit dolorum beatae",
+            description: "Lorem ipsum dolor amet consectetur adipisicing elit. Modi at quae et aperiam ipsa culpa a sit dolorum beatae",
         },
 
         {
