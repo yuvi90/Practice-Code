@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 100px;
+}
+
+/* ***** Card 1 ****** */
+
+.card1 {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-image: url(../img/photography.jpg);
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.hover1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.hover1 h2 {
+    color: white;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.hover1:hover {
+    opacity: 1;
+}
+
+/* ***** Card 2 ****** */
+
+.card2 {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.card2:hover {
+    cursor: pointer;
+}
+
+.fashion {
+    width: 100%;
+    filter: blur(0);
+    /* transform: scale(1); */
+    transition: all 1.5s ease;
+}
+
+.card2:hover .fashion{
+    filter: blur(1.5px);
+    /* transform: scale(1.02); */
+}
+
+.bg-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.card2:hover .bg-hover{
+    opacity: 1;
+}
+
+.red-line {
+  height: 2px;
+  width: 60px;
+  background-color: red;
+}
+
+.caption .fashion-btn {
+  font-family: Montserrat;
+  text-decoration: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 0;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 1s ease .25s;
+}
+
+.card2:hover .caption {
+    transform: translateY(0);
+    opacity: 1;
+}

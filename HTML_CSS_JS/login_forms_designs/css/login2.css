@@ -1,0 +1,78 @@
+*{
+  font-family: sans-serif;
+	font-weight: normal;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.box{
+  width: 300px;
+  padding: 40px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1{
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.login label[for="user"], label[for="pass"]{
+  display: block;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#user, #pass{
+  display: block;
+  background: none;
+  border: none;
+  border-bottom: solid 1px white;
+  outline: none;
+  color: white;
+  width: 100%;
+  margin: 20px auto;
+  font-size: 16px;
+}
+
+.login input[type="submit"]{
+  display: block;
+  background: none;
+  color: white;
+  outline: none;
+  border: 2px solid white;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.login input[type="submit"]:hover{
+  background: white;
+  color: black;
+}
+
+.login a{
+  display: block;
+  color: white;
+  margin: 14px 0px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.login a:hover{
+  text-decoration: underline;
+}
