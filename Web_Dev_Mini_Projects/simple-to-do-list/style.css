@@ -1,0 +1,132 @@
+*, *::after, *::before {
+    /* font-family: 'Montserrat', sans-serif;
+	font-weight: normal; */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);  
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;   
+    width: 100%;
+    padding: 20px;
+    /* background-color: indianred; */
+}
+
+.container .title {
+    font-family: 'Montserrat';
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: 45px;  
+}
+
+.container .text-area {
+    display: flex;
+    height: 75px;
+    width: 100%;
+    margin: 40px 0 20px 0;
+    justify-content: space-between;
+}
+
+.text-area input {
+    font-family: 'Montserrat';
+    height: 100%;
+    width: 85%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    padding: 25px;
+    font-size: 1.2em;
+}
+
+.text-area button {
+    font-family: 'Montserrat';
+    height: 100%;
+    width: 70px;
+    border: none;
+    background-color: tomato;
+    font-size: 3em;
+    color: white;
+    border-radius: 15px;
+    outline: none;
+    transition-property: background-color;
+    transition-duration: .75s;
+}
+
+.text-area button:hover {
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
+.container .list-area {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.list-area li {
+    font-family: 'Montserrat';
+    list-style: none;
+    background-color: lightgray;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(61, 61, 61);
+    margin-bottom: 8px;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    cursor: default;
+}
+
+.list-area li i {
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+    opacity: 0;
+    transition: all .75s ease;
+}
+
+.list-area li:hover i{
+    opacity: 1;
+}
+
+.container .footer {
+    font-family: 'Montserrat';
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.footer button{
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: tomato;
+    font-size: 1em;
+    color: white;
+    outline: none;
+    transition-property: background-color;
+    transition-duration: .75s;
+}
+
+.footer button:hover {
+    background-color: lightcoral;
+    cursor: pointer;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Basics</title>
+    <style>
+        body {
+            background: rgb(17, 15, 33);
+        }
+        .countryCard {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .flag {
+            display: block;
+            width: 200px;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid rgb(153, 153, 153);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn" onclick=showCountries()>Show Counteries</button>
+    <div id="container">
+    </div>
+    <script>
+        isClick = false;
+        function showCountries() {
+            if (!isClick) {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", 'https://restcountries.com/v3.1/all', true);
+                xhr.onload = function () {
+                    if (xhr.status == 200)
+                    {
+                        console.log("Data fetched successfully");
+                        let countries = JSON.parse(this.response);
+                        const countryCard =  document.createElement('div');
+                        countryCard.classList.add('countryCard');
+                        countries.forEach(country => {
+                            const countryCardImg =  document.createElement('img');
+                            countryCardImg.src = country.flags.png;
+                            countryCardImg.classList.add('flag');
+                            countryCard.appendChild(countryCardImg);
+                        });
+                        document.querySelector('#container').appendChild(countryCard);
+                    }
+                }
+                xhr.send();
+                isClick=true;
+            } else {
+                document.querySelector('.countryCard').remove();
+                isClick=false;
+            }
+        }
+    </script>
+</body>
+
+</html>

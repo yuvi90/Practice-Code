@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            background-color: aqua;
+            cursor: pointer;
+        }
+        .text {
+            cursor: pointer;
+        }
+        * {
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <button class="btn">Click Me!</button>
+    </div>
+
+    <script type="text/javascript">
+
+        let btn = document.querySelector(".btn");
+        btn.addEventListener("click", clickHandler);
+        function clickHandler() {
+            let text = document.createElement("h3");
+            text.innerText = "Hello";
+            text.classList.add("text");
+            text.addEventListener("click", (e) => {
+                e.target.remove();
+            });
+            let body = document.querySelector("body");
+            body.appendChild(text); 
+        }
+        
+    </script>  
+</body>
+</html>

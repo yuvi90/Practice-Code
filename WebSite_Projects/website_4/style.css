@@ -7,7 +7,11 @@
 body {
     background: #17181a;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
+
+
+/* ----Header---- */
 
 #logo {
     color: white;
@@ -15,6 +19,7 @@ body {
 }
 
 .nav-header {
+    position: relative;
     min-height: 10vh;
     width: 80%;
     font-size: 1rem;
@@ -24,9 +29,11 @@ body {
     color: white;
     margin: 0 auto;
     padding: 2rem 0;
+    z-index: 2;
 }
 
-.line1, .line2 {
+.line1,
+.line2 {
     width: 3rem;
     height: 0.2rem;
     margin: 0.4rem;
@@ -38,6 +45,8 @@ body {
     cursor: pointer;
 }
 
+/* ----Section---- */
+
 .slide {
     min-height: 100vh;
     margin: 0 auto;
@@ -47,6 +56,19 @@ body {
     align-items: center;
     color: white;
     background: #17181a;
+}
+
+.hero-img {
+    position: relative;
+    flex: 1;
+    flex-basis: 25rem;
+    overflow: hidden;
+}
+
+.hero-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .hero-desc {
@@ -60,16 +82,15 @@ body {
     position: relative;
 }
 
-.hero-img {
-    position: relative;
-    flex: 1;
-    flex-basis: 25rem;
+.hero-desc h2 {
+    font-family: 'Abril Fatface';
+    font-size: 5rem;
 }
 
-.hero-img img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.hero-desc p {
+    padding: 3rem 0rem;
+    font-size: 1.5rem;
+    color: rgb(233, 233, 233);
 }
 
 .mountain-span {
@@ -82,17 +103,6 @@ body {
 
 .fashion-span {
     color: rgb(255, 139, 93)
-}
-
-.hero-desc h2 {
-    font-family: 'Abril Fatface';
-    font-size: 5rem;
-}
-
-.hero-desc p {
-    padding: 3rem 0rem;
-    font-size: 1.5rem;
-    color: rgb(233, 233, 233);
 }
 
 .explore {
@@ -135,7 +145,7 @@ body {
     flex-basis: 30rem;
 }
 
-.contact h2{
+.contact h2 {
     font-size: 5rem;
     padding: 2rem 0;
 }
@@ -148,11 +158,17 @@ body {
 .reveal-img,
 .reveal-text {
     position: absolute;
+    height: 150%;
     width: 100%;
-    height: 100%;
     background: #17181a;
-    top: 0;
+    top: -15%;
+    /* Avoid Flickering in Animations */
     left: 0;
+}
+
+.scrollmagic-pin-spacer {
+    position: static !important;
+    /* Fixing Pin Spacer comes on to content and disable clicking */
 }
 
 .cursor {
@@ -161,4 +177,47 @@ body {
     border: 2px solid white;
     border-radius: 50%;
     position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.5s ease;
+    transition-property: background, transform;
+    transform-origin: 75% 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+}
+
+.cursor.nav-active {
+    background: rgb(86, 124, 228);
+    transform: scale(3);
+}
+
+.cursor.explore-active {
+    background: #fff;
+    transform: scale(3);
+}
+
+.title {
+    position: relative;
+    overflow: hidden;
+}
+.title-swipe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    mix-blend-mode: darken;
+    transform: translateY(100%);
+}
+
+.t-swipe1 {
+    background: rgb(167, 110, 231);
+}
+.t-swipe2 {
+    background: rgb(86, 124, 228);
+}
+.t-swipe3 {
+    background: rgb(255, 139, 93);
 }

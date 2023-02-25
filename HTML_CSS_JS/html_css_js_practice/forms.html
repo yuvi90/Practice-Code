@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <form action="" method="get">
+
+        <div>
+            <label for="fname">First Name : </label>
+            <input type="text" name="fname" id="fname" placeholder="First Name" required>
+            <label for="lname">Last Name : </label>
+            <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+        </div>
+        
+        <div>
+            <label for="">Gender : </label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="others" value="others">
+            <label for="others">Others</label>
+        </div>
+       
+        <div>
+            <label for="dob">Date of Birth : </label>
+            <input type="date" name="dob" id="dob">
+        </div>
+        
+        <div>
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        
+        <div>
+            <label for="">Select Courses : </label>
+            <div>
+                <input type="checkbox" id="java" value="java">
+                <label for="java">Java Oops</label>
+                <input type="checkbox" id="frontend" value="frontend">
+                <label for="frontend">Frontend</label>
+                <input type="checkbox" id="backend" value="backend">
+                <label for="backend">Backend</label>
+            </div>
+        </div>
+        
+        <div>
+            <label for="pmethod">Payment Method : </label>
+            <select name="pmethod" id="pmethod">
+                <option value="none">None</option>
+                <option value="visa">Visa</option>
+                <option value="mastercard">Master Card</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="pass">Enter Password : </label>
+            <input type="password" name="password" id="pass" required>
+            <label for="cpass">Confirm Password : </label>
+            <input type="password" name="cpassword" id="cpass" required>
+        </div>
+
+        <input type="submit">
+        <input type="reset" value="Reset Form">
+
+    </form>
+</body>
+
+</html>
