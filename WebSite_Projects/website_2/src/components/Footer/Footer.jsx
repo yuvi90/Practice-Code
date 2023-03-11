@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="footer--upper container grid grid-four-column">
 
           <div className="footer--upper--about">
-            <h3>Yuvi Technical</h3>
+            <h3>Company Name</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
           </div>
 
@@ -66,7 +66,7 @@ const Footer = () => {
 
         <div className="footer--bottom">
           <div className="container grid grid-two-column">
-            <p>@{new Date().getFullYear()} Yuvi Technical. All Rights Reserved</p>
+            <p>@{new Date().getFullYear()} All Rights Reserved</p>
             <div>
               <a href='#' className='footer-bottom-links'>Privacy Policy</a>
               <a href='#' className='footer-bottom-links'>Terms & Conditions</a>

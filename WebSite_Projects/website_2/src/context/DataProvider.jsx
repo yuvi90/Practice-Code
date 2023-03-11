@@ -18,7 +18,7 @@ export default function DataProvider({ children }) {
         return dispatch({
             type: "HOME_UPDATE",
             payload: {
-                name: "Yuvi Technical",
+                name: "Company Name",
                 image: "./images/hero.svg",
             },
         });

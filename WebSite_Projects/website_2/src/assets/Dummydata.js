@@ -36,8 +36,8 @@ export const dummyData = {
 
         {
             id: 6,
-            title: "Thapa Codefest",
-            image: "https://thapaonlineclass.com/images/thapa.png",
+            title: "SEO",
+            image: "https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi at quae et aperiam ipsa culpa a sit dolorum beatae"
         }
     ]
