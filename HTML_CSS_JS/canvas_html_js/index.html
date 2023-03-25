@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canvas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    body {
+      background-color: rgb(34, 34, 34);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    #my-canvas {
+      border: solid 2px salmon;
+    }
+
+    .btn-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    button {
+      background-color: cadetblue;
+      color: #fff;
+      cursor: pointer;
+      padding: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="my-canvas" height="800" width="1000"></canvas>
+  <div class="btn-wrapper">
+    <button class="animate-play-btn">Play Animation</button>
+    <button class="animate-stop-btn">Stop Animation</button>
+    <button class="gen-btn">Generate</button>
+    <button class="clear-btn">Clear</button>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
