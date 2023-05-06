@@ -1,0 +1,17 @@
+SELECT properties.*, cities.name AS city_name
+FROM properties
+INNER JOIN cities ON properties.city_id = cities.id
+WHERE properties.id = 1;
+
+SELECT amenities.* 
+FROM amenities
+INNER JOIN properties_amenities ON amenities.id = properties_amenities.amenity_id
+WHERE properties_amenities.property_id = 1;
+
+SELECT * 
+FROM testimonials
+WHERE property_id = 1;
+
+SELECT * 
+FROM interested_users_properties
+WHERE property_id = 1;
