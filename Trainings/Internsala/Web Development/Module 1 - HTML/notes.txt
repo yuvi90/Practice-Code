@@ -1,0 +1,58 @@
+Content In HTML Module
+
+1. Web Development - Terminologies
+
+2. Developer : Full-Stack, Front-end, Back-end
+
+3. Web Technologies
+
+4. Client-Server Communication
+        Steps
+        1. Client need for service
+        2. Client finds relevant Server
+        3. Client get close to server for Communication
+        4. Client sends request for service
+        5. Server processes the request generate response accordingly
+        6. Server send response to client.
+
+5. Internet Working :
+        IP Address
+        DNS (maps domain name to IP address of server)
+        Host (on which web server is installed which hosts website)
+
+
+6. HTTP Request and HTTP Response
+
+7. Local Environment
+        Local Server as Host at 127.0.0.1 (Default IP of Machine when not connected to any network) - Local Web server
+
+8. HTML Terminologies
+        Indentation 4 spaces
+        Common HTML tags
+        b, i tag vs strong, em tag (screen reader)
+
+9. URL is the unique address of a resource on the internet
+        Absolute URL
+        Relative URL
+
+10. List
+        ol - Ordered List - Type : 1 , a , A, I, i (marker in List)
+        ul - Unordered List - Type : Circle, Sqaure, Dot, None
+        dl - Description List - Example: Glossary or Dictionary
+                <dl>
+                  <dt>
+                    <dd></dd>
+                  </dt>
+                </dl>
+
+11. Tables
+        <table border="1" cellspacing="0" cellpaddings="5" wight="400" height="200">
+          <tr>
+            <th>Student</th>
+          </tr>
+          <tr>
+            <td colspan='2'></td>
+          </tr>
+        </table>
+
+12. Form
