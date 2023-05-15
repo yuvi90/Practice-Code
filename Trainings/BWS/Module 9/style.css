@@ -1,0 +1,22 @@
+.hero-section {
+    /* background-image: url(https://images.unsplash.com/photo-1484821582734-6c6c9f99a672?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80); */
+    background-image: radial-gradient(closest-corner, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, .1) 100%), url(https://images.unsplash.com/photo-1484821582734-6c6c9f99a672?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80);
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 5px 5px rgba(115, 115, 115, 0.5);
+}
+
+main,
+footer {
+    background-color: #f1f5f9;
+}
