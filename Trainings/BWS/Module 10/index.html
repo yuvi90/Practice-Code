@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Star Wars | JQuery Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 40px;
+            min-height: 100vh;
+            font-family: 'Lora', serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 25px;
+
+        }
+
+        .container h1 {
+            font-size: 50px;
+        }
+
+        .container img {
+            width: 60%;
+            box-shadow: 0px 4px 5px #b2b2b2;
+        }
+
+        .gen-btn {
+            padding: 10px 20px;
+            font-size: 20px;
+            font-family: 'Lora', serif;
+            background-color: cadetblue;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 5px #b2b2b2;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gen-btn:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <button class="gen-btn">Pick Character</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(document).ready(function () {
+            $(".gen-btn").on("click", () => {
+                if ($(".container").find("*")) {
+                    $(".container").empty();
+                }
+                const id = Math.round(Math.random() * 80) + 1;
+                $.get(`https://akabab.github.io/starwars-api/api/id/${id}.json`, (data) => {
+                    const name = `<h1>${data["name"]}</h1>`
+                    const img = `<img src="${data["image"]}" alt="" />`
+                    $(".container").append(name)
+                    $(".container").append(img)
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
