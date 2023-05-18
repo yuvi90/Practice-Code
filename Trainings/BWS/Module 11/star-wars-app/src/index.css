@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1d1b;
+  color: #edbb34;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.logo {
+  width: 100;
+} 
+
+.character-wrapper {
+  padding: 50px;
+  border: 1px solid #edbb34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 600px
+}
+
+.character-wrapper p {
+  text-transform: capitalize;
+}
+
+.affiliations p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.affiliations ul {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #e5a430;
+  color: #fff;
+  border-radius: 10px;
+  list-style: none;
+}
+
+.image-container {
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.gen-btn {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Lora', serif;
+  background-color: #edbb34;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gen-btn:hover {
+  transform: translateY(-8px);
+  background-color: #e5a430;
+}
