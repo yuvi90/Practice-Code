@@ -1,28 +1,23 @@
 import requests
 
 print("Welcome to Pokedex !")
-
 while True:
-    user_input = input("Press (s) to Start or (q) to Quit\n")
-    user_input.lower()
+    user_input = input(
+        "Press (s) to Enter Pokemon or Press (q) to Quit\n").lower()
     if user_input == 's':
-        while True:
-            pokemon_name = input("Enter pokemon name for details or Press (q) to Quit\n")
-            pokemon_name = pokemon_name.lower()
-            if (pokemon_name == 'q'):
-                exit()
-            api = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name}"
-            req = requests.get(api)
-            if req.status_code == 200:
-                data = req.json()
-                print(f"Name : {data['name'].capitalize()}")
-                print("Abilities : ")
-                for ability in data['abilities']:
-                    print(f"  - {ability['ability']['name'].capitalize()}")
-                print(f"Weight : {data['weight'].capitalize()} lbs")
-                print(f"Type : {data['type'][0]['type']['name'].capitalize()}")
-            else:
-                print("Invalid input, Try  Again!")
+        pokemon_name = input("Enter Pokemon Name : ").lower()
+        api = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name}"
+        req = requests.get(api)
+        if req.status_code == 200:
+            data = req.json()
+            print(f"Name : {data['name'].capitalize()}")
+            print("Abilities : ")
+            for ability in data['abilities']:
+                print(f"  - {ability['ability']['name'].capitalize()}")
+            print(f"Weight : {data['weight']} lbs")
+            print(f"Type : {data['types'][0]['type']['name'].capitalize()}")
+        else:
+            print("Invalid input, Try  Again!")
     elif user_input == 'q':
         exit()
     else:
