@@ -7,8 +7,10 @@ while True:
     user_input.lower()
     if user_input == 's':
         while True:
-            pokemon_name = input("Enter pokemon for details : ")
+            pokemon_name = input("Enter pokemon name for details or Press (q) to Quit\n")
             pokemon_name = pokemon_name.lower()
+            if (pokemon_name == 'q'):
+                exit()
             api = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name}"
             req = requests.get(api)
             if req.status_code == 200:
@@ -18,7 +20,7 @@ while True:
                 for ability in data['abilities']:
                     print(f"  - {ability['ability']['name'].capitalize()}")
                 print(f"Weight : {data['weight'].capitalize()} lbs")
-                print(f"Type : {data['type'][0]['type'].capitalize()}")
+                print(f"Type : {data['type'][0]['type']['name'].capitalize()}")
             else:
                 print("Invalid input, Try  Again!")
     elif user_input == 'q':
