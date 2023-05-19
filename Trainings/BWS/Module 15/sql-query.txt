@@ -1,0 +1,18 @@
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  price DECIMAL(10, 2),
+  description TEXT
+);
+
+INSERT INTO products (name, price, description)
+VALUES
+  ('iPhone', 1000.00, 'Apple iphone 14'),
+  ('Macbook Pro', 2000, 'Macbook pro m2'),
+  ('iPad', 600, 'Apple Ipad 128Gb'),
+  ('Airpod 2', 14.95, 'Apple Airpod 2'),
+  ('Watch', 5.99, 'Apple Watch series 6 44mm');
+
+SELECT *
+FROM products
+LIMIT 3;
