@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% load thumbnail %}
+{% block body %}
+    <h1>Details<h1>
+    <hr>
+    <h4>
+        {{post.text}}
+    </h4>
+    {% thumbnail post.image "600x600" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+    {% endthumbnail %}
+    <a href="{% url 'feed:index' %}">Go Back</a>
+{% endblock %}
