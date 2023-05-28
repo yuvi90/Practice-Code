@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}{{post.text}} | {{ post.author.username }}{% endblock %}
+{% block content %}
+<div class="ml-14 mt-16">
+    {% include 'includes/post.html' with post=post %}
+</div>
+{% endblock %}

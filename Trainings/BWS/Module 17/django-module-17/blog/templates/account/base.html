@@ -1,0 +1,23 @@
+<!-- This file is for override allauth base html -->
+
+{% extends "base.html" %}
+
+{% block title %}
+    {% block head_title %}
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+    {% if messages %}
+        <div>
+            <strong>Messages:</strong>
+            <ul>
+                {% for message in messages %}
+                <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+{% endblock %}
