@@ -1,0 +1,45 @@
+Entities:
+
+users 
+cities
+properties
+amenities
+testimonials
+
+Relationships: 
+
+users - cities: No, they are not related.
+users - properties: Yes, users can mark favourite properties.
+users - amenities: No, they are not related.
+users - testimonials: Yes, users give testimonials.
+
+cities - properties: Yes, List properties according to city.
+cities - amenities: No
+cities - testimonials: No
+
+properties - amenities: Yes, List different amenities available.
+properties - testimonials: Yes, Rating for properties
+
+amenities - testimonials: No
+
+users - properties:  Many to Many
+users - testimonials: one to Many
+cities - properties: One to Many
+properties - amenities: Many to Many
+properties - testimonials: One to Many
+
+// Exmaple query
+create TABLE amenties (
+    id INT AUTO_INCREMENT NOT NULL,
+    city_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    description longtext NOT NULL,
+    gender enum('male', 'female', 'unisex') NOT NULL,
+    rent int NOT NULL,
+    rating_clean float(2,1) not null,
+    rating_food float(2,1) not null,
+    rating_safety float(2,1) not null,
+    PRIMARY KEY(id),
+    FOREIGN KEY(city_id) REFERENCES cities(id)
+);
