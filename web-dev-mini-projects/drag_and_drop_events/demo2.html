@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>File Management System</title>
+</head>
+
+<body>
+  <div id="file" draggable="true" style="width: 100px; height: 100px; background: purple;">File</div>
+  <div id="copyDirectory" style="width: 200px; height: 200px; background: lightblue; margin-top: 20px;">Copy here</div>
+  <div id="moveDirectory" style="width: 200px; height: 200px; background: orange; margin-top: 20px;">Move here</div>
+
+  <script>
+    var file = document.getElementById('file');
+    var copyDirectory = document.getElementById('copyDirectory');
+    var moveDirectory = document.getElementById('moveDirectory');
+
+    file.addEventListener('dragstart', function (event) {
+      event.dataTransfer.setData('text/plain', 'File data');
+      event.dataTransfer.effectAllowed = 'copyMove';
+    });
+
+    copyDirectory.addEventListener('dragover', function (event) {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'copy'; // Indicate copy effect
+    });
+
+    copyDirectory.addEventListener('drop', function (event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData('text');
+      copyDirectory.textContent = 'File copied: ' + data;
+    });
+
+    moveDirectory.addEventListener('dragover', function (event) {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'move'; // Indicate move effect
+    });
+
+    moveDirectory.addEventListener('drop', function (event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData('text');
+      moveDirectory.textContent = 'File moved: ' + data;
+    });
+  </script>
+</body>
+
+</html>

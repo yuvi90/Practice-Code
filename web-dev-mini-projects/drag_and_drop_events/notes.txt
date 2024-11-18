@@ -1,0 +1,33 @@
+In drag events, preventDefault is commonly used to control the default behavior of the browser. Here’s how it works and why it is used:
+
+What preventDefault Does
+The preventDefault method is called on an event to prevent the default action the browser would take in response to the event. In the context of drag events, it is used to control how the browser handles drag and drop operations.
+
+Why preventDefault is Used in Drag Events
+
+1. Allowing Drop: 
+  By default, most elements do not accept drops. To make an element a drop target, you need to call event.preventDefault() in the dragover event. Without this, the browser will not allow dropping on the target element.
+
+  element.addEventListener('dragover', function(event) {
+      event.preventDefault(); // Allows the element to be a drop target
+  });
+
+
+2. Customizing Drag Behavior: 
+  Preventing the default behavior allows you to define custom drag-and-drop logic. For example, you might want to control the data being transferred during the drag or the appearance of the dragged element.
+
+  element.addEventListener('dragstart', function(event) {
+      event.dataTransfer.setData('text/plain', 'Custom data');
+      event.effectAllowed = 'copyMove';
+      event.preventDefault(); // Customizing drag behavior
+  });
+
+
+3. Managing Drop Effects: 
+  When you want to manage different types of drop effects like copying, moving, or linking, using preventDefault helps you control which effects are allowed and how they are handled.
+
+  element.addEventListener('drop', function(event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData('text');
+      console.log('Dropped data:', data); // Handling the drop event
+  });

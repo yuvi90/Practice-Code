@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#board {
+  display: flex;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.beige {
+  background-color: beige;
+}
+
+.pink {
+  background-color: palevioletred;
+}
+
+#king {
+  width: 200px;
+  height: 200px;
+}
+
+#info {
+  height: 30px;
+}
+
+.highlight {
+  background-color: rgb(233,102,102)
+}
+
+.dropped {
+  border: 5px solid red;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shopping Cart Example</title>
+</head>
+
+<body>
+  <div id="product1" draggable="true" data-product="Product 1" style="width: 100px; height: 100px; background: red;">
+    Product 1</div>
+  <div id="product2" draggable="true" data-product="Product 2" style="width: 100px; height: 100px; background: blue;">
+    Product 2</div>
+  <div id="cart" style="width: 200px; height: 200px; background: yellow; margin-top: 20px;">Drop here to add to cart
+  </div>
+
+  <script>
+    var products = document.querySelectorAll('[draggable="true"]');
+    var cart = document.getElementById('cart');
+
+    products.forEach(function (product) {
+      product.addEventListener('dragstart', function (event) {
+        var productData = event.target.getAttribute('data-product');
+        event.dataTransfer.setData('text/plain', productData);
+        event.effectAllowed = 'copy';
+      });
+    });
+
+    cart.addEventListener('dragover', function (event) {
+      event.preventDefault(); // Allows the drop
+    });
+
+    cart.addEventListener('drop', function (event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData('text');
+      cart.textContent = 'Added to cart: ' + data;
+    });
+  </script>
+</body>
+
+</html>

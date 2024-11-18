@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Allowing Drop Example</title>
+</head>
+
+<body>
+  <div id="dragSource" draggable="true" style="width: 100px; height: 100px; background: red;">Drag me</div>
+  <div id="dropTarget" style="width: 200px; height: 200px; background: yellow; margin-top: 20px;">Drop here</div>
+
+  <script>
+    var dragSource = document.getElementById('dragSource');
+    var dropTarget = document.getElementById('dropTarget');
+
+    dragSource.addEventListener('dragstart', function (event) {
+      event.dataTransfer.setData('text/plain', 'This is the dragged data.');
+    });
+
+    dropTarget.addEventListener('dragover', function (event) {
+      event.preventDefault(); // Allows the drop
+    });
+
+    dropTarget.addEventListener('drop', function (event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData('text');
+      dropTarget.textContent = 'Dropped data: ' + data;
+    });
+  </script>
+</body>
+
+</html>
